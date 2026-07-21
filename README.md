@@ -31,12 +31,12 @@ The following screenshots show the output produced by the example program.
 
 ### Output 1
 
-![Program Output](image.png)
+![Program Output](intro.png)
 
 ### Output 2
 
-![Program Output](image-1.png)
+![Program Output](vars.png)
 
 ### Output 3
 
-![Program Output](image-2.png)
+![Program Output](intro-test.png)
