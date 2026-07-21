@@ -1,42 +1,229 @@
-# Branch: `01_Hello`
+# Branch: `02_Advanced`
 
-This branch introduces the fundamentals of Python programming. It includes examples covering basic syntax, variables, control flow, loops, functions, and common data structures.
+This branch builds on the concepts introduced in **`01_Hello`** and demonstrates more practical Python features that are commonly used in real-world applications.
 
 ## Topics Covered
 
-* Printing output (`print`)
-* Variables and basic data types
-* String formatting with f-strings
-* Multiple assignment and variable swapping
-* Conditional statements (`if`, `elif`, `else`)
-* Pattern matching (`match` / `case`)
-* `for` and `while` loops
-* List comprehensions
-* Functions
-* Lambda expressions
-* Dictionaries, lists, tuples, and sets
-* Dictionary comprehensions
+* File handling
+* Exception handling
+* Modules and imports
+* Command-Line Interfaces (CLI)
+* Virtual environments (`venv`)
 
-## Running the Example
+---
 
-Ensure Python 3 is installed, then run:
+# Project Structure
 
-```bash 
-python3 Hello.py
+```text
+02_Advanced_Basics/
+│
+├── 01_file_io.py
+├── 02_exceptions.py
+├── 03_modules.py
+├── 03_utils.py
+├── 04_cli.py
+│
+├── data.txt
+├── data.json
+├── data.csv
+├── out.txt
+│
+└── README.md
 ```
 
-## Example Output
+## Running the Examples
 
-The following screenshots show the output produced by the example program.
+Run each example individually:
 
-### Output 1
+```bash
+python3 01_file_io.py
+python3 02_exceptions.py
+python3 03_modules.py
+python3 04_cli.py <image_path> --width 800 --verbose
+```
 
-![Program Output](image.png)
+---
 
-### Output 2
+# 1. Working with Files
 
-![Program Output](image-1.png)
+The `01_file_io.py` example demonstrates how to:
 
-### Output 3
+* Read a text file
+* Write to a text file
+* Read JSON files
+* Read CSV files
 
-![Program Output](image-2.png)
+## Reading a Text File
+
+If `data.txt` does not exist, Python raises a `FileNotFoundError`.
+
+Example:
+
+![File Not Found](image.png)
+
+> **Note**
+>
+> The screenshots in this README were captured before the project was reorganized. At the time, the main example file was named **`adv.py`**. Although the screenshots reference `adv.py`, the examples have since been split into separate files (such as `01_file_io.py`, `02_exceptions.py`, `03_modules.py`, and `04_cli.py`) to make the project easier to follow. The functionality shown in the screenshots remains the same.
+
+To fix the error:
+
+1. Create a file named `data.txt`.
+2. Add some sample text.
+3. Run the program again.
+
+> **Note**
+>
+> This behavior only occurs when opening a file in **read** mode (`"r"`).
+> Opening a file in **write** mode (`"w"`) automatically creates the file if it does not already exist.
+
+---
+
+## JSON Example
+
+Create a file named:
+
+```text
+data.json
+```
+
+Add the following content:
+
+```json
+{}
+```
+
+The example uses Python's built-in `json` module to read the file.
+
+---
+
+## CSV Example
+
+Create a file named:
+
+```text
+data.csv
+```
+
+Example content:
+
+```csv
+name,age
+Ada,36
+Grace,40
+```
+
+The example reads the file using `csv.DictReader`.
+
+---
+
+# 2. Exception Handling
+
+The `02_exceptions.py` example demonstrates:
+
+* `try`
+* `except`
+* `else`
+* `finally`
+* Raising your own exceptions using `raise`
+
+Example output:
+
+![Exception Handling](image-1.png)
+
+Use the following command instead of adv.py  
+```
+ python3 02_exeptions.py
+```
+
+---
+
+# 3. Modules and Imports
+
+The `03_modules.py` example demonstrates:
+
+* Importing your own modules
+* Importing from Python's Standard Library
+* Using the `math` module
+* Using the `__name__ == "__main__"` pattern
+
+The custom module `utils.py` contains the reusable `slugify()` function, which is imported into `03_modules.py`.
+
+---
+
+# 4. Command-Line Interface (CLI)
+
+The `04_cli.py` example demonstrates how to build a simple command-line application using Python's `argparse` module.
+
+Example:
+
+```bash
+python3 04_cli.py image.jpg --width 500 --verbose
+```
+
+The screenshots below show the original image and the resized output.
+
+![CLI Example](image-2.png)
+
+Use the following command instead of resize.py
+ ```
+    python3 04_cli.py
+  ```
+---
+
+# 5. Virtual Environments
+
+A virtual environment isolates your project's dependencies from other Python projects installed on your machine.
+
+## Create a virtual environment
+
+```bash
+python3 -m venv .venv
+```
+
+## Activate the environment
+
+### macOS / Linux
+
+```bash
+source .venv/bin/activate
+```
+
+### Windows (Command Prompt)
+
+```cmd
+.venv\Scripts\activate
+```
+
+### Windows (PowerShell)
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+## Install packages
+
+```bash
+pip install requests
+```
+
+## Save installed dependencies
+
+```bash
+pip freeze > requirements.txt
+```
+
+## Reinstall dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Leave the virtual environment
+
+```bash
+deactivate
+```
+
+Example:
+
+![Virtual Environment](image-3.png)
