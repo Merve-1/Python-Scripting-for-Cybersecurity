@@ -59,7 +59,7 @@ If `data.txt` does not exist, Python raises a `FileNotFoundError`.
 
 Example:
 
-![File Not Found](image.png)
+![File Not Found](error-msg.png)
 
 > **Note**
 >
@@ -128,7 +128,7 @@ The `02_exceptions.py` example demonstrates:
 
 Example output:
 
-![Exception Handling](image-1.png)
+![Exception Handling](error-handling.png)
 
 Use the following command instead of adv.py  
 ```
@@ -162,7 +162,7 @@ python3 04_cli.py image.jpg --width 500 --verbose
 
 The screenshots below show the original image and the resized output.
 
-![CLI Example](image-2.png)
+![CLI Example](resize.png)
 
 Use the following command instead of resize.py
  ```
@@ -226,4 +226,4 @@ deactivate
 
 Example:
 
-![Virtual Environment](image-3.png)
+![Virtual Environment](venv.png)
